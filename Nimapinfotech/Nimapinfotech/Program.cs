@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using Nimapinfotech.Models;
+using System;
+
 namespace Nimapinfotech
 {
     public class Program
@@ -8,6 +12,10 @@ namespace Nimapinfotech
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            var provider = builder.Services.BuildServiceProvider();
+            var config = provider.GetRequiredService<IConfiguration>();
+            builder.Services.AddDbContext<NimapDbContext>(item => item.UseSqlServer(config.GetConnectionString("Nimap")));
 
             var app = builder.Build();
 
