@@ -1,0 +1,69 @@
+﻿@model PaginatedList<Nimapinfotech.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model[0].ProductId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].CategoryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Category.CategoryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="pagination">
+    @if (Model.HasPreviousPage)
+    {
+        <a asp-action="Index" asp-route-page="@(Model.PageIndex - 1)">Previous</a>
+    }
+
+    <span>Page @(Model.PageIndex) of @(Model.TotalPages)</span>
+
+    @if (Model.HasNextPage)
+    {
+        <a asp-action="Index" asp-route-page="@(Model.PageIndex + 1)">Next</a>
+    }
+</div>

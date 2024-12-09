@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Nimapinfotech")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c92fc1b037c3d66c27262f2147921a64612f5a45")]
 [assembly: System.Reflection.AssemblyProductAttribute("Nimapinfotech")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Nimapinfotech")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,5 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Nimapinfotech.Models;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Nimapinfotech.Models
 {
@@ -8,11 +9,13 @@ namespace Nimapinfotech.Models
         [Key]
         public int ProductId { get; set; }
 
-        [Column("ProductName", TypeName = "varchar(100)")]
         [Required]
+        [Column(TypeName = "varchar(100)")]
         public string ProductName { get; set; }
 
-       
+        [ForeignKey("Category")]
         public int CategoryId { get; set; }
+
+        public virtual Category Category { get; set; }
     }
 }

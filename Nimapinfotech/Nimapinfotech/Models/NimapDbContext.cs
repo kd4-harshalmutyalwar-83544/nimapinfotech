@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Nimapinfotech.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Nimapinfotech.Models
 {
